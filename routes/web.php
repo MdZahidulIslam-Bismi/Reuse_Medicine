@@ -25,9 +25,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', '\App\Http\Controllers\ProjectController@Index');
 Route::get('/admin/dashboard', '\App\Http\Controllers\ProjectController@Deshboard');
-//Route::get('/medicineDonate', '\App\Http\Controllers\ProjectController@MedicineDonate')->name('medicine.donate');
-//Route::post('/medicineDonate', '\App\Http\Controllers\ProjectController@MedicineDonateSubmit')->name('medicine.donate');
-
 Route::resource('medicine', \App\Http\Controllers\MedicineController::class);
 Route::get('/donate', '\App\Http\Controllers\ProjectController@Donate');
 Auth::routes();
