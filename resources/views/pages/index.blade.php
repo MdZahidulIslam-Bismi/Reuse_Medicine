@@ -23,7 +23,7 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-                        
+
                     </ul>
                     <form class="d-flex">
                     <div class="flex-center position-ref full-height">
@@ -59,13 +59,13 @@
                         <img src="{{asset('images/user1.jpg')}}" width="200" height="200">
                     <h4>Donner & receiver Account</h4>
                     </button>
-                    <a href="{{route('medicine.donate')}}">
+                    <a href="{{route('medicine.index')}}">
                         <button class="property">
                             <img src="{{asset('images/medicine-donate1.jpg')}}" width="200" height="200">
                             <h4>Donate Medicine</h4>
                         </button>
                     </a>
-                    
+
                     <button class="property">
                         <img src="{{asset('images/blood donate1.jpg')}}" width="200" height="200">
                         <h4>Blood Donate</h4>

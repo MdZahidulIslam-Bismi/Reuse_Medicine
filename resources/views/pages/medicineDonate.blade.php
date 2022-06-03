@@ -27,9 +27,9 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-                        
+
                     </ul>
-                   
+
                 </div>
             </div>
         </nav>
@@ -87,11 +87,11 @@
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                          <button type="submit" class="btn btn-primary">Send message</button>
+                          <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                       </div>
                     </div>
-                  </div> 
+                  </div>
               </div>
               <!-- Donate Medicine End -->
 
@@ -126,27 +126,27 @@
                                 </div>
                                 <div>
                                 <h5 class="medicineData2">Hello wolrd</h5>
-                                
+
                                 </div>
-                                
+
                               </div>
-                              
+
                             </div>
-                            <div> 
+                            <div>
                               <h4>Address</h4>
                             </div>
                             </div>
-                            
+
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                           <button type="button" class="btn btn-primary">Send message</button>
                         </div>
                       </div>
                     </div>
-                  </div> 
+                  </div>
               </div>
         <div>
-         
+
         <!-- Section start-->
        write code
         <!-- section End -->
@@ -159,10 +159,10 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="{{asset('js/scripts.js')}}"></script>
-        
+
 <link src="https://code.jquery.com/jquery-3.5.1.js"></link>
 <link src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></link>
 <link src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></link>
-     
+
     </body>
 </html>
