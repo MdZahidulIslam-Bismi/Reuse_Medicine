@@ -17,8 +17,13 @@ return new class extends Migration
             $table->id();
             $table->foreignId('brand_id')->constrained();
             $table->string('medicineName');
-            $table->string('description')->nullable();
+            $table->string('medicineType');
+            $table->string('BrandName')->nullable();
+            $table->string('BatchId')->nullable();
+            $table->string('prducTionExpire')->nullable();
+            $table->string('donerAddress')->nullable();
             $table->integer('quantity');
+            $table->text('image');
             $table->timestamps();
         });
     }

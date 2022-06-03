@@ -36,7 +36,33 @@ class MedicineController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd('you are working');
+        //medicine donate data store
+        $this->validate($request,[
+            'medicine_name' => 'required',
+            'medicine_brand' => 'required',
+            'medecine_quantity'=> 'required',
+            'medicine_created_date'=> 'required',
+            'medicine_doner_address'=> 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+        $medicine =new Medicine;
+        $medicine->brand_id = 5;
+        $medicine->medicineName = $request->medicine_name;
+        $medicine->medicineType = $request->medicine_type;
+        $medicine->BrandName= $request->medicine_brand;
+        $medicine->BatchId = $request->batch_id;
+        $medicine->prducTionExpire = $request->medicine_created_date;
+        $medicine->donerAddress = $request->medicine_doner_address;
+        $medicine->quantity = $request->medecine_quantity;
+        if(isset($request->image)){
+            $imageName = time().$request->image->getClientOriginalExtension();
+            $request->image->move(public_path('images'), $imageName);
+            $medicine->image = $imageName;
+        }
+        
+        $medicine->save();
+        return redirect()->back()->with('success', 'Data Saved');
     }
 
     /**

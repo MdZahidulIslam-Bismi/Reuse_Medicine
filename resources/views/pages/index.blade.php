@@ -59,7 +59,7 @@
                         <img src="{{asset('images/user1.jpg')}}" width="200" height="200">
                     <h4>Donner & receiver Account</h4>
                     </button>
-                    <a href="{{route('medicine.donate')}}">
+                    <a href="{{route('medicine.index')}}">
                         <button class="property">
                             <img src="{{asset('images/medicine-donate1.jpg')}}" width="200" height="200">
                             <h4>Donate Medicine</h4>

@@ -48,47 +48,67 @@
         <div class="container ">
           <!-- Donate Medicine start -->
                 <div class=" text-black">
+                @if ($errors->any())
+                  <div class="alert alert-danger">
+                      <ul>
+                          @foreach ($errors->all() as $error)
+                              <li>{{ $error }}</li>
+                          @endforeach
+                      </ul>
+                  </div>
+              @endif
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i class="fas fa-plus-square fa-8x"></i><h6>Donate Medicine</h6></button>
                   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
                       <div class="modal-content">
-                        <div class="modal-header">
+                        <div class="modal-header"> 
                           <h5 class="modal-title" id="exampleModalLabel">Donate Medicine</h5>
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
-                          <form action="{{ route('medicine.store') }}" method="post">
+                        
+                          <form action="{{ route('medicine.store')}}" method="POST" enctype="multipart/form-data">
+
                             @csrf
-                            <div class="mb-3">
-                              <label for="recipient-name" class="col-form-label">Medicine Name *</label>
-                              <input type="text" name="medicine_name" class="form-control" id="recipient-name">
-                            </div>
-                            <div class="mb-3">
-                              <label for="message-text" class="col-form-label"> Medicine brand name</label>
-                              <input class="form-control" name="medicine_brand" id="message-text"></input>
-                            </div>
-                            <div class="mb-3">
-                              <label for="recipient-name" class="col-form-label">Batch ID </label>
-                              <input type="text" name="batch_id" class="form-control" id="recipient-name">
-                            </div>
-                            <div class="mb-3">
-                              <label for="message-text" class="col-form-label">Expiry Date</label>
-                              <input class="form-control" name="expiry_date" id="message-text"></input>
-                            </div>
-                            <div class="mb-3">
-                              <label for="recipient-name" class="col-form-label">Medicine created date</label>
-                              <input type="text" name="medicine_created_date" class="form-control" id="recipient-name">
-                            </div>
-                            <div class="mb-3">
-                              <label for="message-text" class="col-form-label">Quantity</label>
-                              <input class="form-control" name="quantity" id="message-text"></input>
-                            </div>
-                          </form>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                          <button type="submit" class="btn btn-primary">Send message</button>
-                        </div>
+                            <div class="modal-body">
+                              <div class="mb-3">
+                                <label  class="col-form-label">Medicine Name *</label>
+                                <input type="text" name="medicine_name" class="form-control" >
+                              </div>
+                              <div class="mb-3">
+                                <label  class="col-form-label">Medicine Type</label>
+                                <input type="text" name="medicine_type" class="form-control" >
+                              </div>
+                              <div class="mb-3">
+                                <label  class="col-form-label"> Medicine brand name</label>
+                                <input class="form-control" name="medicine_brand" ></input>
+                              </div>
+                              <div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">Batch ID </label>
+                                <input type="text" name="batch_id" class="form-control"></input>
+                              </div>
+                              <div class="mb-3">
+                                <label for="message-text" class="col-form-label">Quantity</label>
+                                <input class="form-control" name="medecine_quantity" ></input>
+                              </div>
+                              <div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">Medicine Production & Exp date</label>
+                                <input type="text" name="medicine_created_date" class="form-control" >
+                              </div>
+                              <div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">Doner Address & contact</label>
+                                <input type="text" name="medicine_doner_address" class="form-control" ></input>
+                              </div>
+                              <div class="mb-3">
+                                <label for="formFile" class="form-label">Default file input example</label>
+                                <input class="form-control" name="image" type="file" id="formFile">
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary"  class="" >Submit</button>
+                                <!-- <input type="submit" value="Submit"> -->
+                              </div>
+                            </div>                                                 
+                        </form>
                       </div>
                     </div>
                   </div> 
@@ -128,9 +148,7 @@
                                 <h5 class="medicineData2">Hello wolrd</h5>
                                 
                                 </div>
-                                
                               </div>
-                              
                             </div>
                             <div> 
                               <h4>Address</h4>
@@ -139,7 +157,7 @@
                             
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-primary">Send message</button>
+                          <button type="button"  class="btn btn-primary">Send message</button>
                         </div>
                       </div>
                     </div>
@@ -147,22 +165,17 @@
               </div>
         <div>
          
-        <!-- Section start-->
-       write code
-        <!-- section End -->
+
 
         <!-- Footer-->
         <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
         </footer>
-        <!-- Bootstrap core JS-->
+        
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="{{asset('js/scripts.js')}}"></script>
-        
-<link src="https://code.jquery.com/jquery-3.5.1.js"></link>
-<link src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></link>
-<link src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></link>
-     
+       
+
     </body>
 </html>
