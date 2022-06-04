@@ -57,8 +57,10 @@
                       </ul>
                   </div>
               @endif
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i class="fas fa-plus-square fa-8x"></i><h6>Donate Medicine</h6></button>
-                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div >
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i class="fas fa-plus-square fa-8x"></i><h6>Donate Medicine</h6></button>
+                  </div>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
                       <div class="modal-content">
                         <div class="modal-header">
@@ -121,8 +123,13 @@
         <div class="container">
             @if(isset($medicines))
                 @foreach ($medicines as $medicine)
-                <div class=" text-black">
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1" data-bs-whatever="@mdo"><img src="{{asset('images/blood donate1.jpg')}}" width="100" height="100"><h6>Donate Medicine</h6></button>
+                <div class=" text-black medicine_data_button_container" >               
+                  
+                  <div class="medicine_data_button">
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1" data-bs-whatever="@mdo"><img src="{{asset('images/'.$medicine->image)}}" width="100" height="100"><h6>Name: {{$medicine->medicineName}}</h6></button>
+               
+                  </div>
+                   
                     <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg">
                         <div class="modal-content">
@@ -172,10 +179,7 @@
 
 
         <!-- Footer-->
-        <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
-        </footer>
-
+        
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="{{asset('js/scripts.js')}}"></script>

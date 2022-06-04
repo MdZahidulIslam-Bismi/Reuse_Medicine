@@ -53,6 +53,14 @@ img{
 .medicineData2{
   margin-left: 30px;
 }
+.medicine_data_button_container{
+ display: flex;
+ flex-direction: initial;
+ 
+}
+.medicine_data_button{
+  margin: 30px;
+}
 /* custom css statr */
 :root {
   --bs-blue: #0d6efd;
