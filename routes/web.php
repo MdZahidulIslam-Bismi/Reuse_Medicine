@@ -26,7 +26,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', '\App\Http\Controllers\ProjectController@Index');
 Route::get('/admin/dashboard', '\App\Http\Controllers\ProjectController@Deshboard');
 Route::resource('medicine', \App\Http\Controllers\MedicineController::class);
+Route::resource('getMedicine', \App\Http\Controllers\GetMedicineController::class);
 Route::get('/donate', '\App\Http\Controllers\ProjectController@Donate');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+ 

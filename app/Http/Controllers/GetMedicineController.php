@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Medicine;
+use App\Models\GetMedicine;
 use Illuminate\Http\Request;
 
-class MedicineController extends Controller
+class GetMedicineController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class MedicineController extends Controller
      */
     public function index()
     {
-        $medicines = Medicine::all();
-        return view('pages.medicineDonate')->with([
-            'medicines' => $medicines
+        $getMedicines = GetMedicine::All();
+        return view('pages.getMedicine')->with([
+            'getMedicines' => $getMedicines
         ]);
     }
 
@@ -38,43 +38,38 @@ class MedicineController extends Controller
      */
     public function store(Request $request)
     {
-        //dd('you are working');
-        //medicine donate data store
+        //
         $this->validate($request,[
             'medicine_name' => 'required',
-            'medicine_brand' => 'required',
             'medecine_quantity'=> 'required',
-            'medicine_created_date'=> 'required',
-            'medicine_doner_address'=> 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image'=> 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
         
-        $medicine =new Medicine;
-        $medicine->brand_id = 5;
-        $medicine->medicineName = $request->medicine_name;
-        $medicine->medicineType = $request->medicine_type;
-        $medicine->BrandName= $request->medicine_brand;
-        $medicine->BatchId = $request->batch_id;
-        $medicine->prducTionExpire = $request->medicine_created_date;
-        $medicine->donerAddress = $request->medicine_doner_address;
-        $medicine->quantity = $request->medecine_quantity;
+        $getMedicine =new GetMedicine;
+        $getMedicine->receiverName = $request->receiver_name;
+        $getMedicine->reason = $request->reason;
+        $getMedicine->medicineName= $request->medicine_name;
+        $getMedicine->medecineQuantity = $request->medicine_quantity;
+        $getMedicine->cost = $request->cost;
+        $getMedicine->quantity = $request->quantity;
+        $getMedicine->receiverAddress= $request->receiver_address;
         if(isset($request->image)){
             $imageName = time().$request->image->getClientOriginalExtension();
             $request->image->move(public_path('images'), $imageName);
-            $medicine->image = $imageName;
+            $getMedicine->image = $imageName;
         }
 
-        $medicine->save();
+        $getMedicine->save();
         return redirect()->back()->with('success', 'Data Saved');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Medicine  $medicine
+     * @param  \App\Models\getMedicine  $getMedicine
      * @return \Illuminate\Http\Response
      */
-    public function show(Medicine $medicine)
+    public function show(getMedicine $getMedicine)
     {
         //
     }
@@ -82,10 +77,10 @@ class MedicineController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Medicine  $medicine
+     * @param  \App\Models\getMedicine  $getMedicine
      * @return \Illuminate\Http\Response
      */
-    public function edit(Medicine $medicine)
+    public function edit(getMedicine $getMedicine)
     {
         //
     }
@@ -94,10 +89,10 @@ class MedicineController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Medicine  $medicine
+     * @param  \App\Models\getMedicine  $getMedicine
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Medicine $medicine)
+    public function update(Request $request, getMedicine $getMedicine)
     {
         //
     }
@@ -105,10 +100,10 @@ class MedicineController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Medicine  $medicine
+     * @param  \App\Models\getMedicine  $getMedicine
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Medicine $medicine)
+    public function destroy(getMedicine $getMedicine)
     {
         //
     }

@@ -65,11 +65,13 @@
                             <h4>Donate Medicine</h4>
                         </button>
                     </a>
-
+                    <a href="{{route('getMedicine.index')}}">
                     <button class="property">
                         <img src="{{asset('images/blood donate1.jpg')}}" width="200" height="200">
-                        <h4>Blood Donate</h4>
+                        <h4>Get Medicine</h4>
                     </button>
+                    </a>
+                    
                     <button class="property">
                         <h4>Call For Medicine</h4>
                     </button>

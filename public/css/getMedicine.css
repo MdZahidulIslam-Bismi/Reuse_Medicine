@@ -1,0 +1,10 @@
+/* 
+MedicineImage img{
+    white-space: nowrap; 
+    width: 200px; 
+    overflow: hidden; 
+} */
+.MedicineImage img:hover{
+    width: 500px;
+    height: auto;
+}

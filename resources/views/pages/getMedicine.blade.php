@@ -12,6 +12,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{{asset('css/medicineDonate.css')}}" rel="stylesheet" />
+        <link href="{{asset('css/getMedicine.css')}}" rel="stylesheet" />
          <!-- Font Awesome CDN -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
@@ -21,7 +22,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#!">Start Bootstrap</a>
+                <a class="navbar-brand" href="#!">Home</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
@@ -58,7 +59,7 @@
                   </div>
               @endif
                   <div >
-                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i class="fas fa-plus-square fa-8x"></i><h6>Donate Medicine</h6></button>
+                  <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i class="fas fa-plus-square fa-8x"></i><h6>Donate Medicine</h6></button>
                   </div>
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
@@ -68,40 +69,37 @@
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
 
-                          <form action="{{ route('medicine.store')}}" method="POST" enctype="multipart/form-data">
+                          <form action="{{ route('getMedicine.store')}}" method="POST" enctype="multipart/form-data">
 
                             @csrf
                             <div class="modal-body">
                               <div class="mb-3">
-                                <label  class="col-form-label">Medicine Name *</label>
-                                <input type="text" name="medicine_name" class="form-control" >
+                                <label  class="col-form-label">Medicine Receiver Name *</label>
+                                <input type="text" name="receiver_name" class="form-control" >
                               </div>
                               <div class="mb-3">
-                                <label  class="col-form-label">Medicine Type</label>
-                                <input type="text" name="medicine_type" class="form-control" >
+                                <label  class="col-form-label">Reason for help</label>
+                                <input type="text" name="reason" class="form-control" >
                               </div>
                               <div class="mb-3">
-                                <label  class="col-form-label"> Medicine brand name</label>
-                                <input class="form-control" name="medicine_brand" ></input>
+                                <label  class="col-form-label"> Number of medicine According to prescription / Name of Medicine</label>
+                                <input class="form-control" name="medicine_name" ></input>
                               </div>
-                              <div class="mb-3">
-                                <label for="recipient-name" class="col-form-label">Batch ID </label>
-                                <input type="text" name="batch_id" class="form-control"></input>
-                              </div>
+                              
                               <div class="mb-3">
                                 <label for="message-text" class="col-form-label">Quantity</label>
                                 <input class="form-control" name="medecine_quantity" ></input>
                               </div>
                               <div class="mb-3">
-                                <label for="recipient-name" class="col-form-label">Medicine Production & Exp date</label>
-                                <input type="text" name="medicine_created_date" class="form-control" >
+                                <label for="recipient-name" class="col-form-label">Approximate cost for related medicine </label>
+                                <input type="text" name="cost" class="form-control"></input>
                               </div>
                               <div class="mb-3">
-                                <label for="recipient-name" class="col-form-label">Doner Address & contact</label>
-                                <input type="text" name="medicine_doner_address" class="form-control" ></input>
+                                <label for="recipient-name" class="col-form-label">Receiver Address & contact</label>
+                                <input type="text" name="receiver_address" class="form-control" ></input>
                               </div>
                               <div class="mb-3">
-                                <label for="formFile" class="form-label">Default file input example</label>
+                                <label for="formFile" class="form-label">Upload Your prescription</label>
                                 <input class="form-control" name="image" type="file" id="formFile">
                               </div>
                               <div class="modal-footer">
@@ -116,68 +114,66 @@
                   </div>
               </div>
               <!-- Donate Medicine End -->
-
             </div>
         </div>
         <!-- Section End-->
-        <div class="container">
-            @if(isset($medicines))
-                @foreach ($medicines as $medicine)
-                <div class=" text-black medicine_data_button_container">
-                    <div class="medicine_data_button">
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{$medicine->id}}" data-bs-whatever="@mdo"><img src="{{asset('images/'.$medicine->image)}}" width="100" height="100"><h5><small>Name: {{$medicine->medicineName}}</small> </h5> <h5><small>Type: {{$medicine->medicineType}}</small> </h5></button>
+        <div class="main_body">
+          <div class="container d-flex align-content-start flex-wrap data-button-container ">
+              @if(isset($getMedicines))
+                  @foreach ($getMedicines as $getMedicine)
+                        <div type="" class="btn btn-success medicine_data_button" data-bs-toggle="modal" data-bs-target="#exampleModal{{$getMedicine->id}}" data-bs-whatever="@mdo"><img src="{{asset('images/'.$getMedicine->image)}}" width="100" height="100"><h6>Donate Medicine</h6>
+                        
+                      </div>
+                      
+                      <div class="modal fade" id="exampleModal{{$getMedicine->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Type: {{$getMedicine->medicineType}}</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                  <div class="medicinDataBox">
+                                  <div class="medicinData">
+                                  <div class="MedicineImage">
+                                  <img src="{{asset('images/'.$getMedicine->image)}}" width="200" height="200">
+                                  </div>
+                                  <div class="medicineData1">
+                                      
+                                      <div>
+                                      <h5 class="medicineData2">Receiver: {{$getMedicine->receiverName}}</h5>
+                                      </div>
+                                      <div>
+                                      <h5 class="medicineData2">Reason: {{$getMedicine->reason}}</h5>
+                                      </div>
+                                      <div>
+                                      <h5 class="medicineData2">Contact: {{$getMedicine->quantity}}</h5>
+                                      </div>
+                                      <div>
+                                      <h5 class="medicineData2">Medicine : {{$getMedicine->medicineName}}</h5>
+                                      </div>
+                                  </div>
+                                  </div>
+                                  <div>
+                                  <h4>Address: {{$getMedicine->receiverAddress}}</h4>
+                                  </div>
+                                  </div>
 
-                    </div>
-                    
-                    <div class="modal fade" id="exampleModal{{$medicine->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Type: {{$medicine->medicineType}}</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="medicinDataBox">
-                                <div class="medicinData">
-                                <div class="MedicineImage">
-                                <img src="{{asset('images/'.$medicine->image)}}" width="200" height="200">
-                                </div>
-                                <div class="medicineData1">
-                                    <div>
-                                    <h5 class="medicineData2">Medicine Name: {{$medicine->medicineName}}</h5>
-                                    </div>
-                                    <div>
-                                    <h5 class="medicineData2">Brand Name: {{$medicine->BrandName}}</h5>
-                                    </div>
-                                    <div>
-                                    <h5 class="medicineData2">Medicine Quantity: {{$medicine->quantity}}</h5>
-                                    </div>
-                                    <div>
-                                    <h5 class="medicineData2">Expire Date: {{$medicine->prducTionExpire}}</h5>
-                                    </div>
-                                </div>
-                                </div>
-                                <div>
-                                <h4>Address: {{$medicine->donerAddress}}</h4>
-                                </div>
-                                </div>
-
-                            <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button"  class="btn btn-primary">Apply</button>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-            @endif
-        <div>
-
-
+                              <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              <button type="button"  class="btn btn-primary">Donate</button>
+                              </div>
+                          </div>
+                          </div>
+                      </div>
+                  </div>
+                  @endforeach
+              @endif
+          </div>
+        </div>
 
         <!-- Footer-->
-        
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="{{asset('js/scripts.js')}}"></script>
