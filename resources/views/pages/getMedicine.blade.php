@@ -46,84 +46,83 @@
         </header>
         <!-- section start-->
         <div class="bg-gradient-light-orenge py-5">
-        <div class="container ">
-          <!-- Donate Medicine start -->
-                <div class=" text-black">
-                @if ($errors->any())
-                  <div class="alert alert-danger">
-                      <ul>
-                          @foreach ($errors->all() as $error)
-                              <li>{{ $error }}</li>
-                          @endforeach
-                      </ul>
-                  </div>
-              @endif
-                  <div >
-                  <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i class="fas fa-plus-square fa-8x"></i><h6>Donate Medicine</h6></button>
-                  </div>
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Donate Medicine</h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="container ">
+            <!-- Donate Medicine start -->
+                  <div class=" text-black">
+                  @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                    <div >
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i class="fas fa-plus-square fa-8x"></i><h6>Donate Medicine</h6></button>
+                    </div>
+                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Donate Medicine</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+
+                            <form action="{{ route('getMedicine.store')}}" method="POST" enctype="multipart/form-data">
+
+                              @csrf
+                              <div class="modal-body">
+                                <div class="mb-3">
+                                  <label  class="col-form-label">Medicine Receiver Name *</label>
+                                  <input type="text" name="receiver_name" class="form-control" >
+                                </div>
+                                <div class="mb-3">
+                                  <label  class="col-form-label">Reason for help</label>
+                                  <input type="text" name="reason" class="form-control" >
+                                </div>
+                                <div class="mb-3">
+                                  <label  class="col-form-label"> Number of medicine According to prescription / Name of Medicine</label>
+                                  <input class="form-control" name="medicine_name" ></input>
+                                </div>
+                                
+                                <div class="mb-3">
+                                  <label for="message-text" class="col-form-label">Quantity</label>
+                                  <input class="form-control" name="medecine_quantity" ></input>
+                                </div>
+                                <div class="mb-3">
+                                  <label for="recipient-name" class="col-form-label">Approximate cost for related medicine </label>
+                                  <input type="text" name="cost" class="form-control"></input>
+                                </div>
+                                <div class="mb-3">
+                                  <label for="recipient-name" class="col-form-label">Receiver Address & contact</label>
+                                  <input type="text" name="receiver_address" class="form-control" ></input>
+                                </div>
+                                <div class="mb-3">
+                                  <label for="formFile" class="form-label">Upload Your prescription</label>
+                                  <input class="form-control" name="image" type="file" id="formFile">
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                  <button type="submit" class="btn btn-primary"  class="" >Submit</button>
+                                  <!-- <input type="submit" value="Submit"> -->
+                                </div>
+                              </div>
+                          </form>
                         </div>
-
-                          <form action="{{ route('getMedicine.store')}}" method="POST" enctype="multipart/form-data">
-
-                            @csrf
-                            <div class="modal-body">
-                              <div class="mb-3">
-                                <label  class="col-form-label">Medicine Receiver Name *</label>
-                                <input type="text" name="receiver_name" class="form-control" >
-                              </div>
-                              <div class="mb-3">
-                                <label  class="col-form-label">Reason for help</label>
-                                <input type="text" name="reason" class="form-control" >
-                              </div>
-                              <div class="mb-3">
-                                <label  class="col-form-label"> Number of medicine According to prescription / Name of Medicine</label>
-                                <input class="form-control" name="medicine_name" ></input>
-                              </div>
-                              
-                              <div class="mb-3">
-                                <label for="message-text" class="col-form-label">Quantity</label>
-                                <input class="form-control" name="medecine_quantity" ></input>
-                              </div>
-                              <div class="mb-3">
-                                <label for="recipient-name" class="col-form-label">Approximate cost for related medicine </label>
-                                <input type="text" name="cost" class="form-control"></input>
-                              </div>
-                              <div class="mb-3">
-                                <label for="recipient-name" class="col-form-label">Receiver Address & contact</label>
-                                <input type="text" name="receiver_address" class="form-control" ></input>
-                              </div>
-                              <div class="mb-3">
-                                <label for="formFile" class="form-label">Upload Your prescription</label>
-                                <input class="form-control" name="image" type="file" id="formFile">
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary"  class="" >Submit</button>
-                                <!-- <input type="submit" value="Submit"> -->
-                              </div>
-                            </div>
-                        </form>
                       </div>
                     </div>
-                  </div>
+                </div>
+                <!-- Donate Medicine End -->
               </div>
-              <!-- Donate Medicine End -->
-            </div>
-        </div>
+          </div>
         <!-- Section End-->
         <div class="main_body">
-          <div class="container d-flex align-content-start flex-wrap data-button-container ">
+          <div class="container d-flex align-content-start flex-wrap">
               @if(isset($getMedicines))
                   @foreach ($getMedicines as $getMedicine)
                         <div type="" class="btn btn-success medicine_data_button" data-bs-toggle="modal" data-bs-target="#exampleModal{{$getMedicine->id}}" data-bs-whatever="@mdo"><img src="{{asset('images/'.$getMedicine->image)}}" width="100" height="100"><h6>Donate Medicine</h6>
-                        
-                      </div>
+                         </div>
                       
                       <div class="modal fade" id="exampleModal{{$getMedicine->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                           <div class="modal-dialog modal-lg">

@@ -120,15 +120,14 @@
             </div>
         </div>
         <!-- Section End-->
-        <div class="container">
+        <div class="main_body">
+        <div class="container d-flex align-content-start flex-wrap data-button-container ">
             @if(isset($medicines))
                 @foreach ($medicines as $medicine)
-                <div class=" text-black medicine_data_button_container">
-                    <div class="medicine_data_button">
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{$medicine->id}}" data-bs-whatever="@mdo"><img src="{{asset('images/'.$medicine->image)}}" width="100" height="100"><h5><small>Name: {{$medicine->medicineName}}</small> </h5> <h5><small>Type: {{$medicine->medicineType}}</small> </h5></button>
-
+                
+                    <div type="button" class="btn btn-primary medicine_data_button" data-bs-toggle="modal" data-bs-target="#exampleModal{{$medicine->id}}" data-bs-whatever="@mdo"><img src="{{asset('images/'.$medicine->image)}}" width="100" height="100"><h5><small>Name: {{$medicine->medicineName}}</small> </h5> <h5><small>Type: {{$medicine->medicineType}}</small> </h5>
                     </div>
-                    
+
                     <div class="modal fade" id="exampleModal{{$medicine->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg">
                         <div class="modal-content">
@@ -144,13 +143,13 @@
                                 </div>
                                 <div class="medicineData1">
                                     <div>
-                                    <h5 class="medicineData2">Medicine Name: {{$medicine->medicineName}}</h5>
+                                    <h5 class="medicineData2">Medicine: {{$medicine->medicineName}}</h5>
                                     </div>
                                     <div>
-                                    <h5 class="medicineData2">Brand Name: {{$medicine->BrandName}}</h5>
+                                    <h5 class="medicineData2">Brand: {{$medicine->BrandName}}</h5>
                                     </div>
-                                    <div>
-                                    <h5 class="medicineData2">Medicine Quantity: {{$medicine->quantity}}</h5>
+                                    <div>     
+                                    <h5 class="medicineData2"> Quantity: {{$medicine->quantity}}</h5>
                                     </div>
                                     <div>
                                     <h5 class="medicineData2">Expire Date: {{$medicine->prducTionExpire}}</h5>
@@ -173,6 +172,8 @@
                 @endforeach
             @endif
         <div>
+        </div>
+        
 
 
 

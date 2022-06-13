@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\GetMedicine;
+use App\Models\BloodGet;
 use Illuminate\Http\Request;
 
-class GetMedicineController extends Controller
+class BloodGetController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,12 @@ class GetMedicineController extends Controller
      */
     public function index()
     {
-        $getMedicines = GetMedicine::All();
-        return view('pages.getMedicine')->with([
-            'getMedicines' => $getMedicines
+        //
+        $bloodDonate = BloodGet::all();
+        //$bloodDonate = BloodDonate::all();
+        //dd($bloodDonate->toArray());
+        return view('pages.bloodDonate')->with([
+            'bloodGets' => $bloodDonate,
         ]);
     }
 
@@ -40,35 +43,37 @@ class GetMedicineController extends Controller
     {
         //
         $this->validate($request,[
-            'medicine_name' => 'required',
-            'medecine_quantity'=> 'required',
+            'receiver_name' => 'required',
+            'blood_type'=> 'required',
             'image'=> 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
         
-        $getMedicine =new GetMedicine;
-        $getMedicine->receiverName = $request->receiver_name;
-        $getMedicine->reason = $request->reason;
-        $getMedicine->medicineName= $request->medicine_name;
-        $getMedicine->medecineQuantity = $request->medicine_quantity;
-        $getMedicine->cost = $request->cost;
-        $getMedicine->quantity = $request->quantity;
+        $bloodget =new BloodGet;
+        $bloodget->patiernName = $request->receiver_name;
+        $bloodget->BloodType = $request->blood_type;
+        $bloodget->contact = $request->contact;
+        $bloodget->healthProblems = $request->health_problem;
+        $bloodget->typeOfNecessity = $request->type_of_necessity;
+        $bloodget->hospitalAddrress = $request->hospital_addrress;
         if(isset($request->image)){
             $imageName = time().$request->image->getClientOriginalExtension();
             $request->image->move(public_path('images'), $imageName);
-            $getMedicine->image = $imageName;
+            $bloodget->image = $imageName;
         }
 
-        $getMedicine->save();
-        return redirect()->back()->with('success', 'Data Saved');
+        $bloodget->save();
+        return redirect()->back()->with([
+            'success' => 'Data Saved'
+        ]);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\getMedicine  $getMedicine
+     * @param  \App\Models\bloodGet  $bloodGet
      * @return \Illuminate\Http\Response
      */
-    public function show(getMedicine $getMedicine)
+    public function show(bloodGet $bloodGet)
     {
         //
     }
@@ -76,10 +81,10 @@ class GetMedicineController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\getMedicine  $getMedicine
+     * @param  \App\Models\bloodGet  $bloodGet
      * @return \Illuminate\Http\Response
      */
-    public function edit(getMedicine $getMedicine)
+    public function edit(bloodGet $bloodGet)
     {
         //
     }
@@ -88,10 +93,10 @@ class GetMedicineController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\getMedicine  $getMedicine
+     * @param  \App\Models\bloodGet  $bloodGet
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, getMedicine $getMedicine)
+    public function update(Request $request, bloodGet $bloodGet)
     {
         //
     }
@@ -99,10 +104,10 @@ class GetMedicineController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\getMedicine  $getMedicine
+     * @param  \App\Models\bloodGet  $bloodGet
      * @return \Illuminate\Http\Response
      */
-    public function destroy(getMedicine $getMedicine)
+    public function destroy(bloodGet $bloodGet)
     {
         //
     }
