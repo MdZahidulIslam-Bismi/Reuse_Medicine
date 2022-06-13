@@ -17,7 +17,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#!">Start Bootstrap</a>
+                <a class="navbar-brand" href="{{url('/')}}">Home</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
@@ -67,19 +67,20 @@
                     </a>
                     <a href="{{route('getMedicine.index')}}">
                     <button class="property">
-                        <img src="{{asset('images/blood donate1.jpg')}}" width="200" height="200">
+                        <img src="{{asset('images/medicine-donate1.jpg')}}" width="200" height="200">
                         <h4>Get Medicine</h4>
                     </button>
                     </a>
-                    
-                    <button class="property">
-                        <h4>Call For Medicine</h4>
-                    </button>
-                    <button class="property"></button>
+                    <a href="{{route('bloodGet.index')}}">
+                        <button class="property">
+                            <img src="{{asset('images/blood donate1.jpg')}}" width="200" height="200">
+                            <h4> Blood</h4>
+                        </button>
+                    </a>
                 </div>
         </section>
         <!-- Footer-->
-        <footer class="py-5 bg-dark">
+        <footer class="py-5 bg-dark" style="margin-top: 200px;">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
         </footer>
         <!-- Bootstrap core JS-->

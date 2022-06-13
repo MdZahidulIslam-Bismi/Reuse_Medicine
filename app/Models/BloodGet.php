@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class BloodGet extends Model
 {
     use HasFactory;
+    protected $gaurded = [];
 }

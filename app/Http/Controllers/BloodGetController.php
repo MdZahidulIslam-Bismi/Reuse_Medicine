@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\BloodGet;
+use App\Models\BloodDonate;
 use Illuminate\Http\Request;
 
 class BloodGetController extends Controller
@@ -15,11 +16,12 @@ class BloodGetController extends Controller
     public function index()
     {
         //
-        $bloodDonate = BloodGet::all();
-        //$bloodDonate = BloodDonate::all();
+        $bloodGet= BloodGet::all();
+        $bloodDonate = BloodDonate::all();
         //dd($bloodDonate->toArray());
         return view('pages.bloodDonate')->with([
-            'bloodGets' => $bloodDonate,
+            'bloodGets' => $bloodGet,
+            'bloodDonates' => $bloodDonate
         ]);
     }
 
@@ -47,7 +49,7 @@ class BloodGetController extends Controller
             'blood_type'=> 'required',
             'image'=> 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-        
+
         $bloodget =new BloodGet;
         $bloodget->patiernName = $request->receiver_name;
         $bloodget->BloodType = $request->blood_type;
