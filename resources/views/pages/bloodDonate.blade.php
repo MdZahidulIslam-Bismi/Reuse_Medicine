@@ -207,8 +207,8 @@
     <div class="blood_data">
         <div class="blood_data1"> 
           <div class=" ">
-        @if(isset($bloodDonates))
-        @foreach ($bloodDonates as $bloodDonate)
+          @if(isset($bloodDonates))
+          @foreach ($bloodDonates as $bloodDonate)
                 <div class=" text-black medicine_data_button_container">
                      <div class="medicine_data_button">
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{$bloodDonate->id}}" data-bs-whatever="@mdo"><img src="{{asset('images/'.$bloodDonate->image)}}" width="100" height="100"><h5><small>Name: {{$bloodDonate->doonerName}}</small> </h5> <h5><small>Type: {{$bloodDonate->BloodType}}</small> </h5></button>
@@ -259,8 +259,8 @@
                 </div>
         
             </div>
-        @endforeach
-        @endif
+          @endforeach
+          @endif
     </div>
         </div>
  

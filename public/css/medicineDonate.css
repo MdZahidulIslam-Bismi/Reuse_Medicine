@@ -40,7 +40,6 @@ img{
   flex-flow: column wrap;
 }
 .medicinData{
-  
   display: flex;
   flex-direction: row;
 }
@@ -74,10 +73,12 @@ margin-left: 150px;
   flex-direction: row;
 }
 .blood_data1{
-  background-color: yellow;
+  background-color: rgb(159, 223, 153);
+  width: 50%;
 }
 .blood_data2{
-  background-color: rgb(47, 0, 255);
+  background-color: rgb(159, 223, 153);
+  width: 50%;
 }
 /* custom css statr */
 :root {
