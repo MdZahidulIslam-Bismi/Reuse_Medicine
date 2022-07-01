@@ -35,4 +35,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
  
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/deshbordDelivery',[\App\Http\Controllers\DeshboardDeliveryController::class,'DeshboardDelivery'])->name('Delivery');
+Route::get('/publicHome', [App\Http\Controllers\PublicHomeController::class, 'publicHome'])->name('publicHome');

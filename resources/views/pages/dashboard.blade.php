@@ -107,7 +107,10 @@
                     </div>
                 </nav>
             </div>
-            <div id="layoutSidenav_content">
+
+            @yield('content');
+            <!-- Show activity start here -->
+            <!-- <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Static Navigation</h1>
@@ -142,7 +145,8 @@
                         </div>
                     </div>
                 </footer>
-            </div>
+            </div> -->
+            <!-- Show activity end here -->
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="{{asset('js/dashboardScripts.js')}}"></script>

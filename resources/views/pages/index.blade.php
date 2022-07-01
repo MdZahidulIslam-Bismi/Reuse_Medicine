@@ -25,24 +25,28 @@
                         <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
 
                     </ul>
+                    <div class="input-group">
+                        <form class="form-inline">
+                            <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                        </form>
+                    </div>
                     <form class="d-flex" method="post" action="{{ route('logout') }}">
                         @csrf
-                    <div class="flex-center position-ref full-height">
+                            <div class="flex-center position-ref full-height">
 
-                    @if (Route::has('login') && Auth::check())
-                        <div class="top-right links">
-                         
-                              <button type="submit">Logout</button>
-                          
-                            
-                        </div>
-                    @elseif (Route::has('login') && !Auth::check())
-                        <div class="top-right links">
-                            <a href="{{ url('/login') }}">Login</a>
-                            <a href="{{ url('/register') }}">Register</a>
-                        </div>
-                    @endif
-                    </div>
+                            @if (Route::has('login') && Auth::check())
+                                <div class="top-right links">
+                                
+                                    <button type="submit">Logout</button>
+                                  
+                                </div>
+                            @elseif (Route::has('login') && !Auth::check())
+                                <div class="top-right links">
+                                    <a href="{{ url('/login') }}">Login</a>
+                                    <a href="{{ url('/register') }}">Register</a>
+                                </div>
+                        @endif
+                            </div>
                     </form>
                 </div>
             </div>
@@ -77,9 +81,13 @@
                     </a>
                     
                     <button class="property">
-                        <h4>Call For Medicine</h4>
+                    <img src="{{asset('images/blood donate1.jpg')}}" width="200" height="200">
+                        <h4>Donate Blood </h4>
                     </button>
-                    <button class="property"></button>
+                    <button class="property">
+                        <img src="{{asset('images/blood donate1.jpg')}}" width="200" height="200">
+                        <h4> Delivery Medicine </h4>
+                    </button>
                 </div>
         </section>
         <!-- Footer-->

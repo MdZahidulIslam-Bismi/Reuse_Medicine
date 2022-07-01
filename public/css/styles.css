@@ -34,7 +34,55 @@
 img{
   border-radius: 6px;
 }
-/* custom css statr */
+.div_text_1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.div_text_1 h1{
+  color: #ffae00;
+}
+.div_text_1 p{
+  color: #ffcc00f6;
+}
+.div_text_2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.div_text_2 h1{
+  color: #28cef3;
+}
+.div_text_2 p{
+  color: #3193c0;
+}
+.section_2{
+  background-image: url("../images/background_img1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.div_text_3{
+  /* background-image: url("../images/background_img1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+  min-width: 50%;
+  min-height: 500px;
+  color: #964C1D;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+}
+.public_img_1 img{
+  width: 500px;
+  height: 500px;
+}
+/* custom css end */
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
