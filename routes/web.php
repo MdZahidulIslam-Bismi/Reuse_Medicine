@@ -37,3 +37,6 @@ Auth::routes();
 
 Route::get('/deshbordDelivery',[\App\Http\Controllers\DeshboardDeliveryController::class,'DeshboardDelivery'])->name('Delivery');
 Route::get('/publicHome', [App\Http\Controllers\PublicHomeController::class, 'publicHome'])->name('publicHome');
+Route::get('/rejectGetMedicine/{id}', [App\Http\Controllers\DeshboardDeliveryController::class, 'rejectGetMedicine'])->name('rejectGetMedicine');
+Route::get('/approveGetMedicine/{id}', [App\Http\Controllers\DeshboardDeliveryController::class, 'approveGetMedicine'])->name('approveGetMedicine');
+Route::get('/getMedicineRequest', [App\Http\Controllers\DeshboardDeliveryController::class, 'getMedicineRequest'])->name('getMedicineRequest');

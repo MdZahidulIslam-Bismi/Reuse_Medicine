@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('get_medicines', function (Blueprint $table) {
-            $table->id();
+            $table->id(); 
             $table->string('receiverName');
             $table->string('reason');
             $table->string('medicineName')->nullable();

@@ -52,6 +52,11 @@
           <div class="container ">
             <!-- Donate Medicine start -->
                   <div class=" text-black">
+                 
+                  @if(Session::has('message'))
+                   <p class="alert alert-info">{{ Session('message') }}</p>
+                  @endif
+                    
                   @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -122,63 +127,87 @@
         <!-- Section End-->
         <div class="main_body">
           <div class="container d-flex align-content-start flex-wrap">
+            
               @if(isset($getMedicines))
                   @foreach ($getMedicines as $getMedicine)
-                        <div type="" class="btn btn-success medicine_data_button" data-bs-toggle="modal" data-bs-target="#exampleModal{{$getMedicine->id}}" data-bs-whatever="@mdo"><img src="{{asset('images/'.$getMedicine->image)}}" width="100" height="100"><h6>Donate Medicine</h6>
-                         </div>
-                      
-                      <div class="modal fade" id="exampleModal{{$getMedicine->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                          <div class="modal-dialog modal-lg">
-                          <div class="modal-content">
-                              <div class="modal-header">
-                              <h5 class="modal-title" id="exampleModalLabel">Type: {{$getMedicine->medicineType}}</h5>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                              </div>
-                              <div class="modal-body">
-                                  <div class="medicinDataBox">
-                                  <div class="medicinData">
-                                  <div class="MedicineImage">
-                                  <img src="{{asset('images/'.$getMedicine->image)}}" width="200" height="200">
-                                  </div>
-                                  <div class="medicineData1">
-                                      
-                                      <div>
-                                      <h5 class="medicineData2">Receiver: {{$getMedicine->receiverName}}</h5>
-                                      </div>
-                                      <div>
-                                      <h5 class="medicineData2">Reason: {{$getMedicine->reason}}</h5>
-                                      </div>
-                                      <div>
-                                      <h5 class="medicineData2">Contact: {{$getMedicine->quantity}}</h5>
-                                      </div>
-                                      <div>
-                                      <h5 class="medicineData2">Medicine : {{$getMedicine->medicineName}}</h5>
-                                      </div>
-                                  </div>
-                                  </div>
-                                  <div>
-                                  <h4>Address: {{$getMedicine->receiverAddress}}</h4>
-                                  </div>
-                                  </div>
+                  <form action="{{route('getMedicineRequest')}}" method='post'>
+                    @csrf
+                    @method('get')
+                    <input hidden type="text" name='getMedicineRequestId' value="{{$getMedicine->id}}">
+                    <div type="" class="btn btn-success medicine_data_button" data-bs-toggle="modal" data-bs-target="#exampleModal{{$getMedicine->id}}" data-bs-whatever="@mdo"><img src="{{asset('images/'.$getMedicine->image)}}" width="100" height="100"><h6>Donate Medicine</h6>
+                          </div>
+                        
+                        <div class="modal fade" id="exampleModal{{$getMedicine->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Type: {{$getMedicine->medicineType}}</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="medicinDataBox">
+                                    <div class="medicinData">
+                                    <div class="MedicineImage">
+                                    <img src="{{asset('images/'.$getMedicine->image)}}" width="200" height="200">
+                                    </div>
+                                    <div class="medicineData1">
+                                        
+                                        <div>
+                                        <h5 class="medicineData2">Receiver: {{$getMedicine->receiverName}}</h5>
+                                        </div>
+                                        <div>
+                                        <h5 class="medicineData2">Reason: {{$getMedicine->reason}}</h5>
+                                        </div>
+                                        <div>
+                                        <h5 class="medicineData2">Contact: {{$getMedicine->quantity}}</h5>
+                                        </div>
+                                        <div>
+                                        <h5 class="medicineData2">Medicine : {{$getMedicine->medicineName}}</h5>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div>
+                                    <h4>Address: {{$getMedicine->receiverAddress}}</h4>
+                                    </div>
+                                    </div>
 
-                              <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                              <button type="button"  class="btn btn-primary">Donate</button>
-                              </div>
-                          </div>
-                          </div>
-                      </div>
-                  </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                                <button onclick="donate()" class="btn btn-primary">
+                                @if($getMedicine->request_id==NULL && $getMedicine->approved==NULL)
+                                  Request
+                                @elseif($getMedicine->request_id != NULL && $getMedicine->approved==NULL)
+                                  Processing
+                                @else
+                                  Approvd
+                                @endif
+
+
+
+                              </button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                  </form>
                   @endforeach
               @endif
+            
           </div>
         </div>
 
         <!-- Footer-->
-
+        
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="{{asset('js/scripts.js')}}"></script>
-
+        <script>
+          function donate() {
+            
+            window.location.href= "/getMedicineRequest"
+          }
+        </script>
     </body>
 </html>

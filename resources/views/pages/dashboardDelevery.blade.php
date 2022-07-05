@@ -1,12 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h2>Hello world</h2>
-</body>
-</html>
+@extends('pages.dashboard')
+@section('content')
+    <div>
+        <table>
+            <tr>
+                <th>medicine name</th>
+                <th>Request User name</th>
+                <th>Status</th>
+                <th>Change Status</th>
+                
+            </tr>
+            @foreach($getMedicine as $val)
+            <tr>   
+                <td>{{$val->medicineName}}</td>
+                <td>@php $user = DB::table('users')->where('id', $val->request_id)->first(); @endphp
+                    {{$user->name ?? ''}}
+                </td>
+                <td>@if($val->request_id==NULL && $val->approved==NULL)
+                                  Request
+                    @elseif($val->request_id != NULL && $val->approved==NULL)
+                                  Requested
+                                @else
+                                  Approved
+                                @endif
+                </td>
+                <td>
+                    <a href="{{route('approveGetMedicine', $val->id)}}">approve</a>
+                    <a href="{{route('rejectGetMedicine', $val->id)}}">Reject</a>
+                </td>
+                
+            </tr>
+            @endforeach
+        </table>
+
+    </div>
+@endsection('contetnt')
