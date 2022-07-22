@@ -26,7 +26,6 @@
   background-color: #faa28e;
   border-radius: 7px;
   /* background-image: linear-gradient(120deg, #f6d365, #fda085); */
-
 }
 .property:hover{
   background-color: #f7ad9c;
@@ -82,6 +81,25 @@ img{
   width: 500px;
   height: 500px;
 }
+/* publicHome start */
+.publicData{
+  background-image: url(../images/publicHomeBg1.jpg);
+  height: 500px;
+}
+.publicData1{
+  width: 250px;
+  background-image: url(../images/publicHomeBg3.jpg);
+  margin: 20px;
+  padding: 20px;
+  border: 3px solid;
+  border-radius: 7px;
+
+  
+}
+.publicData1:hover{
+  background-color: #003c1e;
+}
+/* publicHome End */
 /* custom css end */
 :root {
   --bs-blue: #0d6efd;

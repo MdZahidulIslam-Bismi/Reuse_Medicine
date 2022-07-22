@@ -124,8 +124,12 @@
         <div class="container d-flex align-content-start flex-wrap data-button-container ">
             @if(isset($medicines))
                 @foreach ($medicines as $medicine)
-                
-                    <div type="button" class="btn btn-primary medicine_data_button" data-bs-toggle="modal" data-bs-target="#exampleModal{{$medicine->id}}" data-bs-whatever="@mdo"><img src="{{asset('images/'.$medicine->image)}}" width="100" height="100"><h5><small>Name: {{$medicine->medicineName}}</small> </h5> <h5><small>Type: {{$medicine->medicineType}}</small> </h5>
+                <form action="{{route('donateMedicineRequest')}}" method="post">
+                  @csrf
+                  @method('get')
+                  
+                    <input hidden type="text" name='id' value="{{$medicine->id}}">
+                    <div type="" class="btn btn-primary medicine_data_button" data-bs-toggle="modal" data-bs-target="#exampleModal{{$medicine->id}}" data-bs-whatever="@mdo"><img src="{{asset('images/'.$medicine->image)}}" width="100" height="100"><h5><small>Name: {{$medicine->medicineName}}</small> </h5> <h5><small>Type: {{$medicine->medicineType}}</small> </h5>
                     </div>
 
                     <div class="modal fade" id="exampleModal{{$medicine->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -148,7 +152,8 @@
                                     <div>
                                     <h5 class="medicineData2">Brand: {{$medicine->BrandName}}</h5>
                                     </div>
-                                    <div>     
+                                    <div>
+                                    <h5 class="medicineData2"> id: {{$medicine->id}}</h5>     
                                     <h5 class="medicineData2"> Quantity: {{$medicine->quantity}}</h5>
                                     </div>
                                     <div>
@@ -163,25 +168,38 @@
 
                             <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button"  class="btn btn-primary">Apply</button>
+                            <button type="button" onclick="donate()"  class="btn btn-primary">
+                            @if($medicine->request_id==NULL && $medicine->approved==NULL)
+                              Request
+                           @elseif($medicine->request_id != NULL && $medicine->approved==NULL)
+                              Processing
+                           @else
+                              Approvd
+                            @endif
+                            </button>
                             </div>
                         </div>
                         </div>
                     </div>
-                </div>
+                    </div>
+                </form>
                 @endforeach
             @endif
         <div>
         </div>
         
 
-
-
         <!-- Footer-->
         
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="{{asset('js/scripts.js')}}"></script>
-
+        <script src="{{asset('js/scripts.js')}}">
+           
+        </script>
+        <script>
+          function donate(){
+            window.location.href= "/donateMedicineRequest"
+          }
+        </script>
     </body>
 </html>

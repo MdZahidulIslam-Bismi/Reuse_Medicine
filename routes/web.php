@@ -40,3 +40,4 @@ Route::get('/publicHome', [App\Http\Controllers\PublicHomeController::class, 'pu
 Route::get('/rejectGetMedicine/{id}', [App\Http\Controllers\DeshboardDeliveryController::class, 'rejectGetMedicine'])->name('rejectGetMedicine');
 Route::get('/approveGetMedicine/{id}', [App\Http\Controllers\DeshboardDeliveryController::class, 'approveGetMedicine'])->name('approveGetMedicine');
 Route::get('/getMedicineRequest', [App\Http\Controllers\DeshboardDeliveryController::class, 'getMedicineRequest'])->name('getMedicineRequest');
+Route::get('/donateMedicineRequest', [App\Http\Controllers\DeshboardDeliveryController::class, 'donateMedicineRequest'])->name('donateMedicineRequest');

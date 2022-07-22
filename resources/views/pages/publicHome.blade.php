@@ -91,7 +91,18 @@
                 </div>  
             </div>  
         </section>
-        <!-- section 2 End -->
+        <!-- section 3 End -->
+        <!-- section 4 Start -->
+        <section class="publicData">
+        <div class="container px-4 px-lg-5 my-5 d-flex justify-content-around publicData">
+                <div class="publicData1">hello</div>  
+                <div class="publicData1">Dolly</div>  
+                <div class="publicData1">Go</div>  
+            </div>  
+        </section>
+        <!-- section 4 End -->
+        
+        
         <!-- Footer-->
         <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>

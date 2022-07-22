@@ -183,8 +183,6 @@
                                   Approvd
                                 @endif
 
-
-
                               </button>
                                 </div>
                             </div>
@@ -205,7 +203,6 @@
         <script src="{{asset('js/scripts.js')}}"></script>
         <script>
           function donate() {
-            
             window.location.href= "/getMedicineRequest"
           }
         </script>
