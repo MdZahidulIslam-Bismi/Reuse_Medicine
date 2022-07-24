@@ -17,11 +17,13 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#!">Start Bootstrap</a>
+                <a class="navbar-brand" href="#!">
+                <img src="{{asset('images/donate & cure.png')}}" width="50" height="50">
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Donate</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
 
                     </ul>
@@ -41,9 +43,9 @@
                                   
                                 </div>
                             @elseif (Route::has('login') && !Auth::check())
-                                <div class="top-right links">
-                                    <a href="{{ url('/login') }}">Login</a>
-                                    <a href="{{ url('/register') }}">Register</a>
+                                <div class="top-right links logReg">
+                                  <button class="btn btn-outline-primary">  <a href="{{ url('/login') }}">Login</a> </button>
+                                  <button class="btn btn-outline-primary">  <a href="{{ url('/register') }}">Register</a>  </button>
                                 </div>
                         @endif
                             </div>
@@ -53,12 +55,22 @@
         </nav>
         <!-- Header-->
         <header class="bg-gradient-orenge py-5">
-            <div class="container px-4 px-lg-5 my-5">
-                <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Donate for peace</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">You can donate hare bg-gradient-orenge medicine & blood</p>
-                </div>
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+            <img src="..." class="d-block w-100" alt="...">
+            <h1>hello world </h1>
             </div>
+            <div class="carousel-item">
+            <img src="..." class="d-block w-100" alt="...">
+            <h1>hi world </h1>
+            </div>
+            <div class="carousel-item">
+            <img src="..." class="d-block w-100" alt="...">
+            <h1>good Morning world </h1>
+            </div>
+        </div>
+        </div>
         </header>
         <!-- Section-->
         <section class="py-5">
@@ -66,6 +78,7 @@
                         <button class="property">
                         <img src="{{asset('images/user1.jpg')}}" width="200" height="200">
                     <h4>Donner & receiver Account</h4>
+    
                     </button>
                     <a href="{{route('medicine.index')}}">
                         <button class="property">
@@ -84,10 +97,7 @@
                     <img src="{{asset('images/blood donate1.jpg')}}" width="200" height="200">
                         <h4>Donate Blood </h4>
                     </button>
-                    <button class="property">
-                        <img src="{{asset('images/blood donate1.jpg')}}" width="200" height="200">
-                        <h4> Delivery Medicine </h4>
-                    </button>
+                   
                 </div>
         </section>
         <!-- Footer-->

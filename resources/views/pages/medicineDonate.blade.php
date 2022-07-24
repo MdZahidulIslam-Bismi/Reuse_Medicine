@@ -124,9 +124,9 @@
         <div class="container d-flex align-content-start flex-wrap data-button-container ">
             @if(isset($medicines))
                 @foreach ($medicines as $medicine)
-                <form action="{{route('donateMedicineRequest')}}" method="post">
-                  @csrf
-                  @method('get')
+                  <form action="{{route('donateMedicineRequest')}}" method="post">
+                    @csrf
+                    @method('get')
                   
                     <input hidden type="text" name='id' value="{{$medicine->id}}">
                     <div type="" class="btn btn-primary medicine_data_button" data-bs-toggle="modal" data-bs-target="#exampleModal{{$medicine->id}}" data-bs-whatever="@mdo"><img src="{{asset('images/'.$medicine->image)}}" width="100" height="100"><h5><small>Name: {{$medicine->medicineName}}</small> </h5> <h5><small>Type: {{$medicine->medicineType}}</small> </h5>

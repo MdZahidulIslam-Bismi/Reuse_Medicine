@@ -60,7 +60,7 @@ class DeshboardDeliveryController extends Controller
 
 public function donateMedicineRequest(Request $request)
 {
-    dd($request->all());
+    dd(request()->all());
     $donateMedicine = Medicine::find($request->donateMedicineRequestId);
     if(isset(auth()->user()->id) && $donateMedicine->request_id == NULL){
         $donateMedicine->request_id = auth()->user()->id;

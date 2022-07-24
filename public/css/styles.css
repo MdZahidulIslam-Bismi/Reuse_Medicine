@@ -11,7 +11,20 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  #ec6f66 → #f3a183
  */
-/* custom css statr */
+/* custom css stat */
+/* index Blade */
+.logReg{
+  display: flex;
+  flex-direction: row;
+}
+.logReg button{
+  margin-left: 10px;
+  text-decoration: none; 
+
+}
+.logReg button a{
+  text-decoration: none; 
+}
 .properties{
   display: flex;
   justify-content: center;
@@ -83,21 +96,23 @@ img{
 }
 /* publicHome start */
 .publicData{
-  background-image: url(../images/publicHomeBg1.jpg);
+  background-image: url(../images/sky.jpg);
   height: 500px;
 }
 .publicData1{
   width: 250px;
-  background-image: url(../images/publicHomeBg3.jpg);
+  /* background-image: url(../images/skyfront1.jpg); */
+  background-color: rgb(21, 21, 21);
   margin: 20px;
   padding: 20px;
-  border: 3px solid;
+  border: 3px solid black ;
   border-radius: 7px;
+  color: white;
 
   
 }
 .publicData1:hover{
-  background-color: #003c1e;
+  border: 3px solid white ;
 }
 /* publicHome End */
 /* custom css end */

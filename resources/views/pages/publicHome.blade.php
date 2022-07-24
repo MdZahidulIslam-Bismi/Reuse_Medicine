@@ -37,9 +37,9 @@
                             
                         </div>
                     @elseif (Route::has('login') && !Auth::check())
-                        <div class="top-right links">
-                            <a href="{{ url('/login') }}">Login</a>
-                            <a href="{{ url('/register') }}">Register</a>
+                        <div class="top-right links logReg">
+                        <button class="btn btn-outline-primary">  <a href="{{ url('/login') }}">Login</a> </button>
+                                  <button class="btn btn-outline-primary">  <a href="{{ url('/register') }}">Register</a>  </button>
                         </div>
                     @endif
                     </div>
@@ -50,7 +50,7 @@
         <!-- Header-->
         <header class=" py-5">
             <section class="py-5">
-            <h1>Through our site {{$medicineNumber}} Medicine Donation<h1>
+            <h1>Through our site {{$getMedicineNumber}} Medicine Donation<h1>
             </section>
         </header>
         <!-- Section 1 start-->
@@ -95,9 +95,19 @@
         <!-- section 4 Start -->
         <section class="publicData">
         <div class="container px-4 px-lg-5 my-5 d-flex justify-content-around publicData">
-                <div class="publicData1">hello</div>  
-                <div class="publicData1">Dolly</div>  
-                <div class="publicData1">Go</div>  
+                <div class="publicData1">
+                    <h5> <strong>Donated Mediicne</strong></h5>
+                    <h3>hello {{$getMedicineNumber}}</h3>
+                </div>  
+                <div class="publicData1">
+                     <h5><strong>Requested Mediicne</strong></h5>
+                    <h4>Dolly {{$donateMicineNumber}}</h4>
+                </div>  
+                <div class="publicData1">
+                <h5><strong>Abaiable Blood</strong></h5>
+                    <h4>Dolly {{$DonatedBloodNumber}}</h4>
+                    
+                </div>  
             </div>  
         </section>
         <!-- section 4 End -->

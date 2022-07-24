@@ -78,7 +78,6 @@
                           </div>
 
                             <form action="{{ route('getMedicine.store')}}" method="POST" enctype="multipart/form-data">
-
                               @csrf
                               <div class="modal-body">
                                 <div class="mb-3">

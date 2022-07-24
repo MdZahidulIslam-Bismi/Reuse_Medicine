@@ -10,14 +10,16 @@ use App\Models\BloodGet;
 class PublicHomeController extends Controller
 {
     public function publicHome(){
-        $medicineNumber = GetMedicine::all()->count();
-        $BloodDonatedNumber = BloodDonate::count();
+        $getMedicineNumber = GetMedicine::all()->count();
+        $donateMicineNumber = GetMedicine::all()->count();
+        $bloodDonatedNumber = BloodDonate::count();
         $BloodGetNumber = BloodGet::all()->count();
 
         // dd($medicineNumber);
         return view('pages.publicHome')->with([
-            'medicineNumber' => $medicineNumber,
-            'DonatedBloodNumber' => $BloodDonatedNumber,
+            'getMedicineNumber' => $getMedicineNumber,
+            'donateMicineNumber' => $donateMicineNumber,
+            'DonatedBloodNumber' => $bloodDonatedNumber,
             'ServicedBloodNumber' => $BloodGetNumber,
         ]);
     }
