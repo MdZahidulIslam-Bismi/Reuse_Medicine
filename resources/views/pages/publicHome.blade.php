@@ -17,7 +17,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#!">Start Bootstrap</a>
+                <a class="navbar-brand" href="#!">Donate & Cure</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
@@ -51,7 +51,8 @@
         <header class=" py-5">
             <section class="py-5">
             <h1>Through our site {{$getMedicineNumber}} Medicine Donation<h1>
-            </section>
+            <i class="fab fa-facebook-f"></i>    
+        </section>
         </header>
         <!-- Section 1 start-->
         <section class="py-5">
@@ -70,7 +71,6 @@
         <section class="py-5 section_2">
         <div class="container px-4 px-lg-5 my-5 d-flex justify-content-around">
                 <div class="text-center div_text_3">
-               
             </div>
                 <div class="div_text_3">
                         <h1 class="display-4 fw-bolder">Why donate?</h1>
@@ -104,19 +104,155 @@
                     <h4>Dolly {{$donateMicineNumber}}</h4>
                 </div>  
                 <div class="publicData1">
-                <h5><strong>Abaiable Blood</strong></h5>
+                    <h5><strong>Abaiable Blood</strong></h5>
                     <h4>Dolly {{$DonatedBloodNumber}}</h4>
-                    
                 </div>  
             </div>  
         </section>
         <!-- section 4 End -->
+        <!-- Section 5 start-->
+        <section class="py-5 ">
+         
+        <div class="container px-4 px-lg-5 my-5 d-flex justify-content-around">
+                <div class="text-center div_text_1">
+                    <h1 class="display-4 fw-bolder">Trasted delivery System for your valuable medicines</h1>
+                    <p class="lead fw-normal mb-0">Our Organizarion have diffrent delivery system, Paid & free delivery system depends on our taget clients financial condition</p>
+                </div>
+                <div class="public_img_1">
+                <img src="{{asset('images/deliveryMedicine.jpg')}}" alt=""/>
+                </div>  
+            </div> 
+        </section>
+        <!-- Section 5 End-->
         
         
         <!-- Footer-->
-        <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
-        </footer>
+       <!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+  <!-- Section: Social media -->
+  <section
+    class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+  >
+    <!-- Left -->
+    <div class="me-5 d-none d-lg-block">
+      <span>Get connected with us on social networks:</span>
+    </div>
+    <!-- Left -->
+
+    <!-- Right -->
+    <div>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3"></i><strong>Donate & Cure</strong>
+          </h6>
+          <p>
+            Here you can use rows and columns to organize your footer content. Lorem ipsum
+            dolor sit amet, consectetur adipisicing elit.
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Service
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Medicine Donation</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Ask for medicine Help</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Blood Donatio </a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Request Blood</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Follow us   
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">facebook</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">snapchat</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">instagram</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset"></a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Contact
+          </h6>
+          <p><i class="fas fa-home me-3"></i> 13/1, panthopath, Dhaka</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            info@donarte&cure.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i> + 88 018 4005 4325</p>
+          <p><i class="fas fa-print me-3"></i> + 88 017 1549 3154</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2021 Copyright:
+    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->

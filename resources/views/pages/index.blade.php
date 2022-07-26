@@ -56,18 +56,35 @@
         <!-- Header-->
         <header class="bg-gradient-orenge py-5">
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-            <img src="..." class="d-block w-100" alt="...">
-            <h1>hello world </h1>
+        <div class="carousel-inner text-center">
+            <div class="carousel-item active " >
+                <div class="carousel1">
+                <div class="item_1">
+                <img src="{{asset('images/medicine_banner.jpg')}}"  class="d-block  carousel_img" alt="...">
+                </div>
+                <div class="item_2 mt-5">
+                    <h1>hello world </h1>
+                    <h1>hello world </h1>
+                </div>
+                </div>
+            </div>
+            <div class="carousel-item carousel2" > 
+                <div class="carousel1">
+                <div class="item_2 text-light mt-5">
+                 <h1>hi world</h1>
+                </div class="item_1">
+                 <img src="{{asset('images/medicine_crisis.jpg')}}" class="d-block  carousel_img"  alt="...">
+                </div>
             </div>
             <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="...">
-            <h1>hi world </h1>
-            </div>
-            <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="...">
+            <div class="carousel1">
+            <div class="item_2 text-dark mt-5">
             <h1>good Morning world </h1>
+            </div>
+                <div class="item_1 ">
+                <img src="{{asset('images/Blood_donate_Banner1.jpg')}}" class="d-block carousel_img" alt="...">
+                </div>
+        </div>
             </div>
         </div>
         </div>
@@ -75,11 +92,11 @@
         <!-- Section-->
         <section class="py-5">
                 <div class="properties">
-                        <button class="property">
+                        <!-- <button class="property">
                         <img src="{{asset('images/user1.jpg')}}" width="200" height="200">
                     <h4>Donner & receiver Account</h4>
     
-                    </button>
+                    </button> -->
                     <a href="{{route('medicine.index')}}">
                         <button class="property">
                             <img src="{{asset('images/medicine-donate1.jpg')}}" width="200" height="200">
@@ -92,12 +109,14 @@
                         <h4>Get Medicine</h4>
                     </button>
                     </a>
-                    
+
+                    <a href="{{route('bloodDonate.index')}}">
                     <button class="property">
                     <img src="{{asset('images/blood donate1.jpg')}}" width="200" height="200">
                         <h4>Donate Blood </h4>
                     </button>
-                   
+                    </a>
+                    
                 </div>
         </section>
         <!-- Footer-->
