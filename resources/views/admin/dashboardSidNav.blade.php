@@ -17,7 +17,7 @@
                                 <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                     <nav class="sb-sidenav-menu-nested nav">
                                         <a class="nav-link" href="layout-static.html">Donner Account</a>
-                                        <a class="nav-link" href="layout-sidenav-light.html">Delivery Men</a>
+                                        <a class="nav-link" href="{{route('deliveryMen')}}">Delivery Men</a>
                                     </nav>
                                 </div>
                                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -57,7 +57,7 @@
                         </div>
                         <div class="sb-sidenav-footer">
                             <div class="small">Logged in as:</div>
-                            Start Bootstrap
+                            Donate & Cure
                         </div>
                     </nav>
                 </div>

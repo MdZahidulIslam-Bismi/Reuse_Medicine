@@ -44,6 +44,9 @@
 .item_2{
   width: 50%;
 }
+.carousel1 h1 h3{
+ margin: 10px;
+}
  .properties{
   display: flex;
   justify-content: center;

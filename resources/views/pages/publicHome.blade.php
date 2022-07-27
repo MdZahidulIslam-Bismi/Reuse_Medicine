@@ -48,12 +48,7 @@
             </div>
         </nav>
         <!-- Header-->
-        <header class=" py-5">
-            <section class="py-5">
-            <h1>Through our site {{$getMedicineNumber}} Medicine Donation<h1>
-            <i class="fab fa-facebook-f"></i>    
-        </section>
-        </header>
+        
         <!-- Section 1 start-->
         <section class="py-5">
         <div class="container px-4 px-lg-5 my-5 d-flex justify-content-around">

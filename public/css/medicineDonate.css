@@ -62,12 +62,17 @@ margin-left: 150px;
 .medicine_data_button{
  width: 200px;
  height: 200px;
- margin: 20px;
+ margin: 10px;
 }
 
 .form_button{
   display: flex;
 }
+.blood_donate_1{
+  padding-left: -250px;
+  margin-left: -250px;
+}
+
 .blood_data{
   display: flex;
   flex-direction: row;
@@ -75,10 +80,19 @@ margin-left: 150px;
 .blood_data1{
   background-color: rgb(159, 223, 153);
   width: 50%;
+  display: flex;
+  flex-flow: row wrap;
 }
-.blood_data2{
+/* .blood_data2{
   background-color: rgb(159, 223, 153);
   width: 50%;
+  display: flex;
+  flex-direction: row wrap;
+} */
+.medicine_data_button_container{
+  width: 200px;
+  margin-top: 20px;
+  margin-right: 5px;
 }
 .public_img_1{
   width: 50px;

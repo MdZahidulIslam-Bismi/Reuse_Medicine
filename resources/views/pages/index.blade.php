@@ -63,15 +63,16 @@
                 <img src="{{asset('images/medicine_banner.jpg')}}"  class="d-block  carousel_img" alt="...">
                 </div>
                 <div class="item_2 mt-5">
-                    <h1>hello world </h1>
-                    <h1>hello world </h1>
+                <h1> Get Medical Support</h1>
+                <h3>Here in Bangladesh according to UN more than 35% people ar out of medical treatment & medication beacouse of financial crisis. Our organization are trying to connect unable people to donner to make the society more peaceful </h3>
                 </div>
                 </div>
             </div>
             <div class="carousel-item carousel2" > 
                 <div class="carousel1">
                 <div class="item_2 text-light mt-5">
-                 <h1>hi world</h1>
+                    <h1>Donate Your unused Medicine</h1>
+                    <h3>we can Support people by donating our unused medicine or donating them ther dundamental demand of mecine</h3>
                 </div class="item_1">
                  <img src="{{asset('images/medicine_crisis.jpg')}}" class="d-block  carousel_img"  alt="...">
                 </div>
@@ -80,6 +81,7 @@
             <div class="carousel1">
             <div class="item_2 text-dark mt-5">
             <h1>good Morning world </h1>
+            <h3> Here through our donation site "Donate & Cure" one can easily find out blood donar and Donate Blood. Through our website people can request for blood while it emergency and get fast response.</h3>
             </div>
                 <div class="item_1 ">
                 <img src="{{asset('images/Blood_donate_Banner1.jpg')}}" class="d-block carousel_img" alt="...">

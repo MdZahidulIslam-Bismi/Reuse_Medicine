@@ -66,9 +66,9 @@
                                 </div>
                             @endif
             
-                        
-                          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i class="fas fa-plus-square fa-8x"></i><h6>Donate Blood</h6></button>
-                        
+                         <div class="blood_donate_1">
+                          <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i class="fas fa-plus-square fa-8x"></i><h6>Donate Blood</h6></button>
+                          </div>
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg">
                               <div class="modal-content">
@@ -141,7 +141,7 @@
                         <!-- Blood donate Form End -->
                         
                         <!-- Blood Get Form Start -->
-                        <div >
+                        <div class="blood_donate_1">
                           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal11" data-bs-whatever="@mdo"><i class="fas fa-plus-square fa-8x"></i><h6>Get Blood</h6></button>
                         </div>
                         <div class="modal fade" id="exampleModal11" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -205,126 +205,123 @@
 
   <div class="container">
     <div class="blood_data">
+      <!-- ----- -->
         <div class="blood_data1"> 
-          <div class=" ">
           @if(isset($bloodDonates))
           @foreach ($bloodDonates as $bloodDonate)
-                <div class=" text-black medicine_data_button_container">
-                     <div class="medicine_data_button">
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{$bloodDonate->id}}" data-bs-whatever="@mdo"><img src="{{asset('images/'.$bloodDonate->image)}}" width="100" height="100"><h5><small>Name: {{$bloodDonate->doonerName}}</small> </h5> <h5><small>Type: {{$bloodDonate->BloodType}}</small> </h5></button>
+            <div class=" text-black medicine_data_button_container">
+                  <div class="medicine_data_button">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{$bloodDonate->id}}" data-bs-whatever="@mdo"><img src="{{asset('images/'.$bloodDonate->image)}}" width="100" height="100"><h5><small>Name: {{$bloodDonate->doonerName}}</small> </h5> <h5><small>Type: {{$bloodDonate->BloodType}}</small> </h5></button>
+                  </div>
+                          
+                    <div class="modal fade" id="exampleModal{{$bloodDonate->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog modal-lg">
+                              <div class="modal-content">
+                                  <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Type: {{$bloodDonate->doonerName}}</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                  </div>
+                                  <div class="modal-body">
+                                      <div class="medicinDataBox">
+                                      <div class="medicinData">
+                                      <div class="MedicineImage">
+                                      <img src="{{asset('images/'.$bloodDonate->image)}}" width="200" height="200">
+                                      </div>
+                                      <div class="medicineData1">
+                                          <div>
+                                          <h5 class="medicineData2">Medicine: {{$bloodDonate->doonerName}}</h5>
+                                          </div>
+                                          <div>
+                                          <h5 class="medicineData2">BloodType: {{$bloodDonate->BloodType}}</h5>
+                                          </div>
+                                          <div>     
+                                          <h5 class="medicineData2"> Quantity: {{$bloodDonate->contact}}</h5>
+                                          </div>
+                                          <div>
+                                          <h5 class="medicineData2">Expire Date: {{$bloodDonate->healthStatus}}</h5>
+                                          </div>
+                                      </div>
+                                      </div>
+                                      <div>
+                                      <h4>Address: {{$bloodDonate->presentAddrress}}</h4>
+                                      <h4>Address: {{$bloodDonate->permanentAddress}}</h4>
+                                      </div>
+                                      </div>
 
-                     </div>
-                            
-                      <div class="modal fade" id="exampleModal{{$bloodDonate->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Type: {{$bloodDonate->doonerName}}</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="medicinDataBox">
-                                        <div class="medicinData">
-                                        <div class="MedicineImage">
-                                        <img src="{{asset('images/'.$bloodDonate->image)}}" width="200" height="200">
-                                        </div>
-                                        <div class="medicineData1">
-                                            <div>
-                                            <h5 class="medicineData2">Medicine: {{$bloodDonate->doonerName}}</h5>
-                                            </div>
-                                            <div>
-                                            <h5 class="medicineData2">BloodType: {{$bloodDonate->BloodType}}</h5>
-                                            </div>
-                                            <div>     
-                                            <h5 class="medicineData2"> Quantity: {{$bloodDonate->contact}}</h5>
-                                            </div>
-                                            <div>
-                                            <h5 class="medicineData2">Expire Date: {{$bloodDonate->healthStatus}}</h5>
-                                            </div>
-                                        </div>
-                                        </div>
-                                        <div>
-                                        <h4>Address: {{$bloodDonate->presentAddrress}}</h4>
-                                        <h4>Address: {{$bloodDonate->permanentAddress}}</h4>
-                                        </div>
-                                        </div>
-
-                                    <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button"  class="btn btn-primary">Apply</button>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                </div>
-        
+                                  <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                  <button type="button"  class="btn btn-primary">Apply</button>
+                                  </div>
+                              </div>
+                              </div>
+                      </div>
+              </div>
             </div>
           @endforeach
           @endif
-    </div>
-        </div>
- 
-        <div class="blood_data2">
-          <div class="">
-                @if(isset($bloodGets))
-                @foreach ($bloodGets as $bloodGet)
-                <div class=" text-black medicine_data_button_container2">
-                    <div class="medicine_data_button">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#examp{{$bloodGet->id}}" data-bs-whatever="@mdo"><img src="{{asset('images/'.$bloodGet->image)}}" width="100" height="100"><h5><small>Name: {{$bloodGet->patiernName}}</small> </h5> <h5><small>Type: {{$bloodGet->BloodType}}</small> </h5></button>
-                    </div>
-                        
-                        <div class="modal fade" id="examp{{$bloodGet->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
+      
+      </div>
+      <hr style="height:2px; width:1%; border-width:0; color:red; background-color:red">
+
+    <!-- ----------------------------------------- -->
+      <div class="blood_data1 flex-row">
+            @if(isset($bloodGets))
+            @foreach ($bloodGets as $bloodGet)
+            <div class="text-black medicine_data_button_container">
+                <div class="medicine_data_button">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#examp{{$bloodGet->id}}" data-bs-whatever="@mdo"><img src="{{asset('images/'.$bloodGet->image)}}" width="100" height="100"><h5><small>Name: {{$bloodGet->patiernName}}</small> </h5> <h5><small>Type: {{$bloodGet->BloodType}}</small> </h5></button>
+                </div>
+                    
+                    <div class="modal fade" id="examp{{$bloodGet->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
                                 <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">Type: {{$bloodGet->patiernName}}</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                                <div class="modal-body">
-                                    <div class="medicinDataBox">
-                                    <div class="medicinData">
-                                    <div class="MedicineImage">
-                                    <img src="{{asset('images/'.$bloodGet->image)}}" width="200" height="200">
-                                    </div>
-                                    <div class="medicineData1">
-                                        <div>
-                                        <h5 class="medicineData2">Medicine: {{$bloodGet->patiernName}}</h5>
-                                        </div>
-                                        <div>
-                                        <!-- <h5 class="medicineData2">Brand: {{$bloodGet->BloodType}}</h5> -->
-                                        </div>
-                                        <div>     
-                                        <!-- <h5 class="medicineData2"> Quantity: {{$bloodGet->contact}}</h5> -->
-                                        </div>
-                                        <div>
-                                        <!-- <h5 class="medicineData2">Expire Date: {{$bloodGet->healthStatus}}</h5> -->
-                                        </div>
-                                    </div>
+                            <div class="modal-body">
+                                <div class="medicinDataBox">
+                                <div class="medicinData">
+                                <div class="MedicineImage">
+                                <img src="{{asset('images/'.$bloodGet->image)}}" width="200" height="200">
+                                </div>
+                                <div class="medicineData1">
+                                    <div>
+                                    <h5 class="medicineData2">Medicine: {{$bloodGet->patiernName}}</h5>
                                     </div>
                                     <div>
-                                    <!-- <h4>Address: {{$bloodGet->presentAddrress}}</h4> -->
-                                    <!-- <h4>Address: {{$bloodGet->permanentAddress}}</h4> -->
+                                    <!-- <h5 class="medicineData2">Brand: {{$bloodGet->BloodType}}</h5> -->
                                     </div>
+                                    <div>     
+                                    <!-- <h5 class="medicineData2"> Quantity: {{$bloodGet->contact}}</h5> -->
                                     </div>
-
-                                <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button"  class="btn btn-primary">Apply</button>
+                                    <div>
+                                    <!-- <h5 class="medicineData2">Expire Date: {{$bloodGet->healthStatus}}</h5> -->
+                                    </div>
                                 </div>
-                            </div>
+                                </div>
+                                <div>
+                                <!-- <h4>Address: {{$bloodGet->presentAddrress}}</h4> -->
+                                <!-- <h4>Address: {{$bloodGet->permanentAddress}}</h4> -->
+                                </div>
+                                </div>
+        
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button"  class="btn btn-primary">Apply</button>
                             </div>
                         </div>
+                        </div>
                     </div>
+              </div>
+            </div>
             @endforeach
             @endif
-        </div>
-
-
-        </div>
-        </div>
+      
     </div>
+    <!-- ... -->
+  </div>
 </div>
-
       <!-- section end blood get data  -->
 
         <!-- Footer-->
