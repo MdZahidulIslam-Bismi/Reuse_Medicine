@@ -10,6 +10,8 @@
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{{asset('css/styles.css')}}" rel="stylesheet" />
     </head>
@@ -92,15 +94,39 @@
         <div class="container px-4 px-lg-5 my-5 d-flex justify-content-around publicData">
                 <div class="publicData1">
                     <h5> <strong>Donated Mediicne</strong></h5>
-                    <h3>hello {{$getMedicineNumber}}</h3>
+                    <p class="publicData_text">Here you can donate your unused medicine & also requested to provide life saving fresh medicine </p>
+                    <p class="service_quantity"> Medicine <strong>{{$getMedicineNumber}}</strong>   Available</large></p>
+                    <p class="publicData_text">We are reposible to provide your valuable mecine to needy & poor people </p>
+                  </div>  
+                <div class="publicData1">
+                     <!-- <h5><strong>Requested Mediicne</strong></h5>
+                    <h4>Dolly {{$donateMicineNumber}}</h4> -->
+
+                    <h5> <strong>Requested Mediicne</strong></h5>
+                    <p class="publicData_text">Needy & financilly Unstable people can request for their emergency medicine & easily get dooner</p>
+                    <p class="service_quantity"> Requested <strong>{{$donateMicineNumber}}</strong>   Medicine</large></p>
+                    <p class="publicData_text">By our website everyday thousend of people are getting their life saving medicine</p>
+                 
                 </div>  
                 <div class="publicData1">
-                     <h5><strong>Requested Mediicne</strong></h5>
-                    <h4>Dolly {{$donateMicineNumber}}</h4>
-                </div>  
+                    <!-- <h5><strong>Abaiable Blood</strong></h5>
+                    <h4>Dolly {{$DonatedBloodNumber}}</h4> -->
+
+                    <h5 > <strong> Blood Dooner</strong></h5>
+                    <p class="publicData_text">One can be donate blood throug our Donate&Cure site. In our site huge numbers of people browes & look for blood donner</p>
+                    <p class="service_quantity"> Abaiable <strong>{{$DonatedBloodNumber}}</strong>   Dooners</large></p>
+                    <p class="publicData_text">By our website everyday thousend of people are getting their life saving medicine</p>
+                 
+                </div> 
                 <div class="publicData1">
-                    <h5><strong>Abaiable Blood</strong></h5>
-                    <h4>Dolly {{$DonatedBloodNumber}}</h4>
+                    <!-- <h5><strong>Abaiable Blood</strong></h5>
+                    <h4>Dolly {{$ServicedBloodNumber}}</h4> -->
+
+                    <h5 > <strong> Emergency Request</strong></h5>
+                    <p class="publicData_text">If you need emergency blood then post a request for blood & we will notify our active dooner to response you . </p>
+                    <p class="service_quantity"> <strong>{{$ServicedBloodNumber}}</strong>   Emergency Request</large></p>
+                    <p class="publicData_text">By our website everyday thousend of people are getting their life saving medicine</p>
+                 
                 </div>  
             </div>  
         </section>
@@ -108,14 +134,42 @@
         <!-- Section 5 start-->
         <section class="py-5 ">
          
-        <div class="container px-4 px-lg-5 my-5 d-flex justify-content-around">
-                <div class="text-center div_text_1">
-                    <h1 class="display-4 fw-bolder">Trasted delivery System for your valuable medicines</h1>
-                    <p class="lead fw-normal mb-0">Our Organizarion have diffrent delivery system, Paid & free delivery system depends on our taget clients financial condition</p>
+        <div class="container px-4 px-lg-5 my-5 d-flex justify-content-around contact_info">
+               <div class="contact_link">
+                <h1 class="text_massage_h1">
+                  For Any Query
+                </h1>
+                <h4 class="text_massage_h4"> You can mail us for any information</h4>
+                <h4 class="text_massage_h4"> You can help us by informing your valuable suggetion & donations.</h4>
+                <div class="text_massage_h5">
+                <h4 class="text_massage_h6"> Follow Us </h4>
+                <div class="icon_box">
+                <i class="fa-brands fa-facebook fa-2x icon_1"></i>
+                <i class="fa-brands fa-linkedin fa-2x icon_1"></i>
+                <i class="fa-brands fa-instagram fa-2x icon_1"></i>
+                <i class="fa-brands fa-youtube fa-2x icon_1"></i>
+                <i class="fa-brands fa-square-snapchat fa-2x icon_1"></i>
                 </div>
-                <div class="public_img_1">
-                <img src="{{asset('images/deliveryMedicine.jpg')}}" alt=""/>
-                </div>  
+                </div>
+              </div>
+              <form>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  
+  <div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form> 
+                  
             </div> 
         </section>
         <!-- Section 5 End-->
@@ -242,8 +296,8 @@
 
   <!-- Copyright -->
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-    © 2021 Copyright:
-    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+   Donate & Cure © 2021 Copyright:
+  <a class="text-reset fw-bold" href="https://mdbootstrap.com/">donate&cure.com</a>
   </div>
   <!-- Copyright -->
 </footer>
